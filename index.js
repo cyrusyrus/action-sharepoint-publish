@@ -5,7 +5,8 @@ const filePath = process.env.FILE_PATH
 const fileExtensionArr = filePath.split('.')
 const fileExtension = `.${fileExtensionArr[fileExtensionArr.length - 1]}`
 const sha = process.env.GITHUB_SHA.substring(0, 7)
-
+const version = "1.0"
+    
 const trimSlashes = (string) => {
     return string.replace(new RegExp('/', 'g'), '_')
 }
@@ -21,7 +22,7 @@ let coreOptions = {
 
 let fileOptions = {
     folder: process.env.LIB_FOLDER,
-    fileName: `${trimSlashes(process.env.GITHUB_REPOSITORY)}_${sha}_${fileExtension}`,
+    fileName: `${trimSlashes(process.env.GITHUB_REPOSITORY)}_${version}_${fileExtension}`,
     fileContent: fs.readFileSync(filePath),
 }
 
