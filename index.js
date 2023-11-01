@@ -22,7 +22,7 @@ let coreOptions = {
 
 let fileOptions = {
     folder: process.env.LIB_FOLDER,
-    fileName: `${trimSlashes(process.env.GITHUB_REPOSITORY)}_${version}_${fileExtension}`,
+    fileName: `test_file_savin_${version}_${fileExtension}`,
     fileContent: fs.readFileSync(filePath),
 }
 
